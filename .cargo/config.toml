@@ -1,0 +1,15 @@
+# Redirect crates.io to the vendored copies under `vendor/`, so the fuzz build
+# (the only part of this project with external dependencies) compiles fully
+# offline — no network access is needed or permitted during the build.
+#
+# Regenerate after a dependency change with:
+#   cargo vendor --manifest-path fuzz/Cargo.toml vendor
+
+[source.crates-io]
+replace-with = "vendored-sources"
+
+[source.vendored-sources]
+directory = "vendor"
+
+[net]
+offline = true

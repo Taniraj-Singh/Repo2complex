@@ -1,0 +1,51 @@
+[package]
+name = "quiver-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2021"
+
+[package.metadata]
+cargo-fuzz = true
+
+# Independent crate: the fuzz targets link libFuzzer, which the library must not.
+# The empty [workspace] table keeps it out of any surrounding workspace.
+[workspace]
+
+[dependencies]
+libfuzzer-sys = "0.4"
+
+[dependencies.quiver]
+path = ".."
+
+[profile.release]
+debug = 1
+
+[[bin]]
+name = "open_archive_fuzzer"
+path = "fuzz_targets/open_archive_fuzzer.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "read_verify_fuzzer"
+path = "fuzz_targets/read_verify_fuzzer.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "decode_lz_fuzzer"
+path = "fuzz_targets/decode_lz_fuzzer.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "decode_rle_fuzzer"
+path = "fuzz_targets/decode_rle_fuzzer.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "build_open_fuzzer"
+path = "fuzz_targets/build_open_fuzzer.rs"
+test = false
+doc = false

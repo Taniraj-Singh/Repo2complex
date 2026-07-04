@@ -1,0 +1,5 @@
+# RLE control bytes: literal (<0x80) and repeat (>=0x80) runs.
+"\x00"
+"\x7f"
+"\x80"
+"\xff"

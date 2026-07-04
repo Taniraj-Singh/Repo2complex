@@ -1,0 +1,15 @@
+# Rust build artifacts
+/target
+/fuzz/target
+
+# Fuzzing run state (the curated corpus under fuzz/corpus is kept)
+/fuzz/artifacts
+/fuzz/coverage
+
+# rustfmt / editor backups
+**/*.rs.bk
+*~
+
+# OS cruft
+.DS_Store
+Thumbs.db

@@ -1,0 +1,12 @@
+# Quiver on-disk magic and tag bytes.
+"QVR1"
+"QVRX"
+"QB"
+# entry kinds
+"\x00"
+"\x01"
+"\x02"
+# compression methods (share bytes with kinds)
+"\x00\x00"
+"\x01\x01"
+"\x02\x02"

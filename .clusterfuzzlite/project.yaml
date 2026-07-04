@@ -1,0 +1,6 @@
+language: rust
+fuzzing_engines:
+  - libfuzzer
+sanitizers:
+  - address
+  - undefined
